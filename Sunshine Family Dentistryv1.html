@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Sunshine Family Dentistry – Gentle, expert dental care for your whole family in Lake Placid, FL. Book your appointment today."/>
+<meta name="keywords" content="dentist Lake Placid FL, family dentistry, dental care Florida, teeth cleaning, cosmetic dentistry, emergency dentist"/>
+<meta property="og:title" content="Sunshine Family Dentistry | Lake Placid, FL"/>
+<meta property="og:description" content="Gentle, modern dental care for the whole family. Accepting new patients in Lake Placid, FL."/>
+<title>Sunshine Family Dentistry | Lake Placid, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0b1623;--ink2:#1a2e42;
+  --teal:#0d7a6b;--teal-l:#12a08d;
+  --gold:#c8a96e;--gold-l:#e2cb9a;
+  --cream:#faf8f4;--cream2:#f2ede6;
+  --white:#fff;--muted:#6b7d8f;
+  --border:rgba(0,0,0,.09);
+  --shadow:0 24px 64px rgba(11,22,35,.12);
+  --r:6px;
+}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+img{display:block;width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:28px;height:1.5px;background:var(--teal);border-radius:2px}
+.eyebrow.center{justify-content:center}
+.eyebrow.gold{color:var(--gold-l)}
+.eyebrow.gold::before,.eyebrow.gold::after{background:var(--gold)}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 6%;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+#nav.stuck{background:rgba(11,22,35,.97);backdrop-filter:blur(18px);padding:14px 6%;box-shadow:0 2px 32px rgba(0,0,0,.3)}
+.logo{display:flex;align-items:center;gap:13px}
+.logo-circle{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-l));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 16px rgba(13,122,107,.4);flex-shrink:0}
+.logo-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;display:block}
+.logo-sub{font-size:10px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:500;display:block}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);font-size:13.5px;transition:color .25s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--teal)!important;color:#fff!important;padding:10px 22px!important;border-radius:100px!important;font-weight:600!important;font-size:13px!important;box-shadow:0 4px 18px rgba(13,122,107,.4);transition:transform .2s,box-shadow .2s!important}
+.nav-cta:hover{transform:translateY(-2px)!important;box-shadow:0 8px 28px rgba(13,122,107,.55)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:300}
+.burger span{width:25px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;inset:0;z-index:199;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:'Playfair Display',serif;font-size:28px;color:#fff;transition:color .2s}
+.mob-menu a:hover{color:var(--gold)}
+.mob-cta{background:var(--teal);color:#fff!important;padding:16px 44px;border-radius:100px;font-family:'Outfit',sans-serif!important;font-size:16px!important;font-weight:600!important;margin-top:8px}
+
+/* HERO */
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1800&q=80&auto=format&fit=crop') center/cover no-repeat}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(11,22,35,.93) 0%,rgba(11,22,35,.65) 55%,rgba(11,22,35,.18) 100%)}
+.hero-grain{position:absolute;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;pointer-events:none}
+.hero-inner{position:relative;z-index:3;width:92%;max-width:1280px;margin:0 auto;padding:140px 0 100px;display:grid;grid-template-columns:1fr 440px;gap:60px;align-items:center}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:rgba(13,122,107,.2);border:1px solid rgba(13,122,107,.45);padding:7px 18px;border-radius:100px;margin-bottom:26px}
+.hero-pill-dot{width:7px;height:7px;border-radius:50%;background:#4ecca3;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-pill span{font-size:11.5px;color:#4ecca3;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.hero-h1{font-size:clamp(44px,5.5vw,80px);font-weight:700;color:#fff;margin-bottom:24px}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-p{font-size:clamp(15px,1.5vw,17.5px);color:rgba(255,255,255,.62);line-height:1.78;max-width:500px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-teal{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#fff;padding:16px 32px;border-radius:100px;font-weight:600;font-size:15px;box-shadow:0 6px 24px rgba(13,122,107,.45);transition:all .3s}
+.btn-teal:hover{background:var(--teal-l);transform:translateY(-2px);box-shadow:0 12px 36px rgba(13,122,107,.5)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.25);color:#fff;padding:16px 32px;border-radius:100px;font-weight:500;font-size:15px;backdrop-filter:blur(6px);transition:all .3s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:40px;margin-top:52px;padding-top:40px;border-top:1px solid rgba(255,255,255,.12)}
+.snum{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1}
+.slabel{font-size:11.5px;color:rgba(255,255,255,.48);letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
+
+/* hero card */
+.hero-card{background:rgba(255,255,255,.07);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:32px;animation:hfloat 7s ease-in-out infinite}
+@keyframes hfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hc-img{width:100%;height:196px;object-fit:cover;border-radius:12px;margin-bottom:22px}
+.hc-title{font-family:'Playfair Display',serif;font-size:21px;color:#fff;margin-bottom:8px}
+.hc-sub{font-size:13px;color:rgba(255,255,255,.52);margin-bottom:20px;line-height:1.6}
+.hc-list{display:flex;flex-direction:column;gap:9px}
+.hc-item{display:flex;align-items:center;gap:12px;padding:11px 15px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;font-size:13.5px;color:rgba(255,255,255,.82)}
+.hc-check{margin-left:auto;color:#4ecca3;font-size:13px}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--ink2);border-top:1px solid rgba(200,169,110,.15);border-bottom:1px solid rgba(200,169,110,.15);overflow:hidden;padding:0}
+.trust-track{display:flex;align-items:center;gap:48px;padding:18px 0;width:max-content;animation:marquee 26s linear infinite}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.ti{display:flex;align-items:center;gap:11px;white-space:nowrap;flex-shrink:0}
+.ti-icon{font-size:20px}
+.ti strong{font-size:13.5px;color:#fff;font-weight:600}
+.ti span{font-size:12px;color:rgba(255,255,255,.42);margin-left:3px}
+.tsep{width:1px;height:28px;background:rgba(200,169,110,.2);flex-shrink:0}
+
+/* SECTIONS */
+.sect{padding:110px 6%}
+.sect-inner{max-width:1200px;margin:0 auto}
+.sh2{font-size:clamp(30px,3.5vw,52px);font-weight:700}
+.sh2 em{font-style:italic;color:var(--teal)}
+.slead{font-size:16px;color:var(--muted);line-height:1.75;max-width:540px}
+
+/* SERVICES */
+#services{background:var(--cream)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.srv-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform .35s,box-shadow .35s}
+.srv-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.srv-img-wrap{overflow:hidden;height:190px}
+.srv-img-wrap img{height:100%;object-fit:cover;transition:transform .5s}
+.srv-card:hover .srv-img-wrap img{transform:scale(1.06)}
+.srv-body{padding:26px 24px}
+.srv-icon{font-size:30px;margin-bottom:12px}
+.srv-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:9px}
+.srv-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* ABOUT */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-imgs{position:relative;height:520px}
+.aimg-main{position:absolute;top:0;left:0;right:56px;bottom:80px;object-fit:cover;border-radius:16px;box-shadow:var(--shadow)}
+.aimg-sec{position:absolute;bottom:0;right:0;width:54%;object-fit:cover;border-radius:16px;box-shadow:var(--shadow);border:4px solid #fff;aspect-ratio:4/3}
+.about-badge{position:absolute;top:28px;right:48px;background:var(--teal);border-radius:14px;padding:18px 22px;text-align:center;box-shadow:0 8px 28px rgba(13,122,107,.4)}
+.abn{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#fff;line-height:1}
+.abl{font-size:11px;color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.about-text .sh2{margin-bottom:18px}
+.about-text p{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.apoints{display:flex;flex-direction:column;gap:16px;margin:28px 0 36px}
+.apt{display:flex;gap:16px;align-items:flex-start}
+.apt-ico{width:44px;height:44px;min-width:44px;border-radius:10px;background:rgba(13,122,107,.1);display:flex;align-items:center;justify-content:center;font-size:20px}
+.apt-t{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.apt-d{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* NUMBERS */
+#numbers{position:relative;padding:90px 6%;background:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=60&auto=format&fit=crop') center/cover}
+#numbers::before{content:'';position:absolute;inset:0;background:rgba(11,22,35,.88)}
+.num-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto;text-align:center}
+.num-h2{font-size:clamp(28px,3vw,46px);font-weight:700;color:#fff;margin-bottom:56px}
+.num-h2 em{font-style:italic;color:var(--gold)}
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.ncard{padding:36px 24px;border:1px solid rgba(200,169,110,.2);border-radius:14px;background:rgba(255,255,255,.04)}
+.nn{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1}
+.nl{font-size:12px;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:.1em;margin-top:8px}
+
+/* TESTIMONIALS */
+#testi{background:var(--cream2)}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tc{background:#fff;border-radius:16px;padding:32px 28px;border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.tc:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.tstars{color:var(--gold);letter-spacing:3px;font-size:16px;margin-bottom:18px}
+.tq{font-size:14.5px;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:24px}
+.tauth{display:flex;align-items:center;gap:14px}
+.tav{width:46px;height:46px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.tav img{width:100%;height:100%;object-fit:cover}
+.tname{font-size:14.5px;font-weight:600;color:var(--ink)}
+.tsince{font-size:12px;color:var(--muted)}
+
+/* GALLERY */
+#gallery{background:#fff;padding:80px 6%}
+.gal-inner{max-width:1200px;margin:0 auto}
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px}
+.gi{border-radius:14px;overflow:hidden}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gi:hover img{transform:scale(1.06)}
+.gi.tall{grid-row:1/3}
+
+/* CTA BANNER */
+.cta-banner{position:relative;padding:100px 6%;background:url('https://images.unsplash.com/photo-1588776814546-1ffbb21e2f50?w=1600&q=70&auto=format&fit=crop') center/cover;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:rgba(11,22,35,.87)}
+.cta-content{position:relative;z-index:1;text-align:center;max-width:680px;margin:0 auto}
+.cta-content h2{font-size:clamp(30px,4vw,54px);font-weight:700;color:#fff;margin-bottom:14px}
+.cta-content h2 em{font-style:italic;color:var(--gold)}
+.cta-content p{font-size:16px;color:rgba(255,255,255,.58);margin-bottom:34px}
+.cta-phone{display:block;font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--gold);margin-bottom:30px;transition:color .25s}
+.cta-phone:hover{color:var(--gold-l)}
+.cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+/* CONTACT */
+#contact{background:var(--cream);padding:110px 6%}
+.contact-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.ii{display:flex;gap:16px;align-items:flex-start;margin-bottom:26px}
+.ii-ico{width:46px;height:46px;min-width:46px;border-radius:10px;background:rgba(13,122,107,.1);display:flex;align-items:center;justify-content:center;font-size:20px}
+.ii-label{font-size:11px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.ii-val{font-size:15px;color:var(--ink);font-weight:500;line-height:1.55}
+.hbox{background:var(--ink);border-radius:14px;padding:28px;margin-top:8px}
+.hbox-t{font-size:11px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
+.hr{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}
+.hr:last-child{border:none}
+.hday{color:rgba(255,255,255,.48)}
+.htime{color:#fff;font-weight:500}
+.map-box{width:100%;height:260px;border-radius:14px;overflow:hidden;border:2px solid var(--border);margin-top:32px}
+.map-box iframe{width:100%;height:100%;border:none}
+.fh3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.fsub{font-size:14px;color:var(--muted);margin-bottom:26px}
+.form{display:flex;flex-direction:column;gap:15px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg label{font-size:12.5px;font-weight:600;color:var(--ink);letter-spacing:.04em}
+.fg input,.fg select,.fg textarea{padding:13px 16px;border-radius:var(--r);border:1.5px solid var(--border);background:var(--cream);font-family:'Outfit',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .25s,box-shadow .25s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,122,107,.13)}
+.fg textarea{resize:vertical;min-height:108px}
+.fbtn{background:var(--ink);color:#fff;border:none;padding:17px;border-radius:100px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:pointer;letter-spacing:.03em;transition:all .3s;width:100%}
+.fbtn:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 10px 30px rgba(13,122,107,.35)}
+.fnote{font-size:12px;color:var(--muted);text-align:center;margin-top:4px}
+
+/* FOOTER */
+footer{background:#060e18;padding:70px 6% 30px}
+.ftop{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px}
+.fbrand p{font-size:14px;color:rgba(255,255,255,.38);line-height:1.75;margin:18px 0 24px;max-width:280px}
+.fsocials{display:flex;gap:10px}
+.fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:15px;color:rgba(255,255,255,.5);transition:all .25s}
+.fsoc:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+.fcol h4{font-size:11px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:20px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.fcol ul a{font-size:14px;color:rgba(255,255,255,.42);transition:color .2s}
+.fcol ul a:hover{color:var(--gold)}
+.fbot{max-width:1200px;margin:0 auto;padding-top:28px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.28);flex-wrap:wrap;gap:12px}
+.fbot a{color:rgba(255,255,255,.28);transition:color .2s}
+.fbot a:hover{color:var(--gold)}
+
+/* REVEAL */
+.rw{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.rw.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .num-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  #nav{padding:16px 5%}
+  #nav.stuck{padding:12px 5%}
+  .nav-links{display:none!important}
+  .burger{display:flex}
+  .hero-inner{padding:120px 0 80px;width:94%;gap:0}
+  .hero-stats{gap:24px}
+  .snum{font-size:34px}
+  .sect{padding:72px 5%}
+  #gallery{padding:72px 5%}
+  #contact{padding:72px 5%}
+  .srv-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .about-imgs{height:300px}
+  .aimg-main{right:40px;bottom:55px}
+  .aimg-sec{width:50%}
+  .about-badge{right:32px;top:24px}
+  .tg{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gi.tall{grid-row:auto}
+  .contact-inner{grid-template-columns:1fr;gap:48px}
+  .frow{grid-template-columns:1fr}
+  .ftop{grid-template-columns:1fr 1fr;gap:36px}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .btn-teal,.btn-ghost{width:100%;justify-content:center}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn-teal,.cta-btns .btn-ghost{width:100%;max-width:300px}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:36px}
+  .num-grid{grid-template-columns:1fr 1fr}
+  .nn{font-size:40px}
+  .gal-grid{grid-template-columns:1fr;grid-template-rows:auto}
+  .ftop{grid-template-columns:1fr;gap:28px}
+  .about-imgs{height:260px}
+  .aimg-main{right:28px;bottom:44px}
+  .aimg-sec{width:48%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <div class="logo-circle">🦷</div>
+    <div>
+      <span class="logo-name">Sunshine Dentistry</span>
+      <span class="logo-sub">Lake Placid, FL</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testi">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#testi" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#contact" class="mob-cta" onclick="closeMenu()">Book Appointment →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill"><span class="hero-pill-dot"></span><span>Now Accepting New Patients</span></div>
+      <h1 class="hero-h1">Your Family's<br><em>Smile</em> Starts<br>Here.</h1>
+      <p class="hero-p">Gentle, modern dental care for every stage of life — from baby teeth to brighter smiles. Serving Lake Placid, FL with warmth and expertise.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-teal">📅 Book Appointment</a>
+        <a href="tel:8634652037" class="btn-ghost">📞 (863) 465-2037</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="snum" data-target="15">0</div><div class="slabel">Years Serving</div></div>
+        <div><div class="snum" data-target="3000" data-suffix="+">0</div><div class="slabel">Happy Patients</div></div>
+        <div><div class="snum" data-target="4.9" data-suffix="★">0</div><div class="slabel">Google Rating</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <img class="hc-img" src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&q=80&auto=format&fit=crop" alt="Dental care"/>
+        <div class="hc-title">Complete Family Care</div>
+        <div class="hc-sub">Everything your family needs — under one caring roof.</div>
+        <div class="hc-list">
+          <div class="hc-item">🪥 Preventive & Cleanings<span class="hc-check">✓</span></div>
+          <div class="hc-item">⚪ Whitening & Cosmetic<span class="hc-check">✓</span></div>
+          <div class="hc-item">👶 Pediatric Dentistry<span class="hc-check">✓</span></div>
+          <div class="hc-item">🚨 Same-Day Emergency<span class="hc-check">✓</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-track">
+    <div class="ti"><span class="ti-icon">🏥</span><strong>State-Licensed</strong><span>Florida Dental Board</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">💳</span><strong>Insurance Accepted</strong><span>Most major plans</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">📅</span><strong>Same-Day Emergency</strong><span>Call us first</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">😌</span><strong>Sedation Available</strong><span>Anxiety-free care</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">🌟</span><strong>Free Consultation</strong><span>New patients</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">💰</span><strong>Transparent Pricing</strong><span>No hidden fees</span></div>
+    <div class="tsep"></div>
+    <!-- duplicate for seamless loop -->
+    <div class="ti"><span class="ti-icon">🏥</span><strong>State-Licensed</strong><span>Florida Dental Board</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">💳</span><strong>Insurance Accepted</strong><span>Most major plans</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">📅</span><strong>Same-Day Emergency</strong><span>Call us first</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">😌</span><strong>Sedation Available</strong><span>Anxiety-free care</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">🌟</span><strong>Free Consultation</strong><span>New patients</span></div>
+    <div class="tsep"></div>
+    <div class="ti"><span class="ti-icon">💰</span><strong>Transparent Pricing</strong><span>No hidden fees</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="sect">
+  <div class="sect-inner">
+    <div style="text-align:center;margin-bottom:56px" class="rw">
+      <div class="eyebrow center">What We Offer</div>
+      <h2 class="sh2">Comprehensive <em>Dental Services</em></h2>
+      <p class="slead" style="margin:14px auto 0">From routine checkups to full smile makeovers — everything your family needs in one welcoming place.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card rw d1">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&q=75&auto=format&fit=crop" alt="General dentistry" loading="lazy"/></div>
+        <div class="srv-body"><div class="srv-icon">🦷</div><div class="srv-name">General & Preventive</div><div class="srv-desc">Routine cleanings, exams, X-rays, fluoride treatments and sealants — the foundation of lifelong dental health.</div></div>
+      </div>
+      <div class="srv-card rw d2">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1588776814546-1ffbb21e2f50?w=700&q=75&auto=format&fit=crop" alt="Cosmetic dentistry" loading="lazy"/></div>
+        <div class="srv-body"><div class="srv-icon">✨</div><div class="srv-name">Cosmetic Dentistry</div><div class="srv-desc">Professional whitening, veneers, bonding and complete smile makeovers — designed to give you confidence.</div></div>
+      </div>
+      <div class="srv-card rw d3">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&q=75&auto=format&fit=crop" alt="Restorative care" loading="lazy"/></div>
+        <div class="srv-body"><div class="srv-icon">⚙️</div><div class="srv-name">Restorative Care</div><div class="srv-desc">Fillings, crowns, bridges and dentures to fully restore the look, feel, and function of your natural teeth.</div></div>
+      </div>
+      <div class="srv-card rw d1">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=75&auto=format&fit=crop" alt="Pediatric dentistry" loading="lazy"/></div>
+        <div class="srv-body"><div class="srv-icon">👶</div><div class="srv-name">Pediatric Dentistry</div><div class="srv-desc">Child-friendly care from the very first tooth. We make kids feel safe, comfortable and actually excited to visit.</div></div>
+      </div>
+      <div class="srv-card rw d2">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=700&q=75&auto=format&fit=crop" alt="Emergency dental" loading="lazy"/></div>
+        <div class="srv-body"><div class="srv-icon">🚨</div><div class="srv-name">Emergency Dental</div><div class="srv-desc">Toothache, broken tooth, knocked-out tooth? We offer same-day emergency slots — call us first.</div></div>
+      </div>
+      <div class="srv-card rw d3">
+        <div class="srv-img-wrap"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=75&auto=format&fit=crop" alt="Sedation dentistry" loading="lazy"/></div>
+        <div class="srv-body"><div class="srv-icon">😴</div><div class="srv-name">Sedation Dentistry</div><div class="srv-desc">For patients with dental anxiety, we offer safe sedation options so you can get the care you need — comfortably.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sect">
+  <div class="sect-inner">
+    <div class="about-grid">
+      <div class="about-imgs rw">
+        <img class="aimg-main" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=80&auto=format&fit=crop" alt="Our dental team" loading="lazy"/>
+        <img class="aimg-sec" src="https://images.unsplash.com/photo-1601233749202-95d04d5b3c00?w=600&q=80&auto=format&fit=crop" alt="Modern dental office" loading="lazy"/>
+        <div class="about-badge"><div class="abn">15+</div><div class="abl">Years of Care</div></div>
+      </div>
+      <div class="about-text rw d2">
+        <div class="eyebrow">Our Story</div>
+        <h2 class="sh2">Why Lake Placid Trusts <em>Sunshine</em></h2>
+        <p style="margin-top:18px">We're more than a dental practice — we're your neighbors. For over 15 years, Sunshine Family Dentistry has been the trusted choice for families across Highlands County.</p>
+        <p>Our approach is simple: treat every patient the way we'd want our own family treated — with patience, clarity, and genuine warmth.</p>
+        <div class="apoints">
+          <div class="apt"><div class="apt-ico">🤝</div><div><div class="apt-t">Patient-First Philosophy</div><div class="apt-d">Treatment plans built around your comfort, goals, and budget — never pushed toward unnecessary procedures.</div></div></div>
+          <div class="apt"><div class="apt-ico">🔬</div><div><div class="apt-t">Modern Equipment</div><div class="apt-d">Digital X-rays, intraoral cameras, and the latest in gentle dental technology for accurate, painless care.</div></div></div>
+          <div class="apt"><div class="apt-ico">🌱</div><div><div class="apt-t">Rooted in the Community</div><div class="apt-d">Proud supporters of Lake Placid local events, schools and community health — since day one.</div></div></div>
+        </div>
+        <a href="#contact" class="btn-teal" style="display:inline-flex">Schedule a Visit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers">
+  <div class="num-inner">
+    <div class="rw">
+      <div class="eyebrow gold center" style="margin-bottom:18px">By the Numbers</div>
+      <h2 class="num-h2">A Practice Built on <em>Trust & Results</em></h2>
+    </div>
+    <div class="num-grid">
+      <div class="ncard rw d1"><div class="nn" data-target="15" data-suffix="+">0+</div><div class="nl">Years in Practice</div></div>
+      <div class="ncard rw d2"><div class="nn" data-target="3000" data-suffix="+">0+</div><div class="nl">Happy Patients</div></div>
+      <div class="ncard rw d3"><div class="nn" data-target="4.9" data-suffix="★">0★</div><div class="nl">Google Reviews</div></div>
+      <div class="ncard rw d4"><div class="nn" data-target="98" data-suffix="%">0%</div><div class="nl">Patient Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi" class="sect">
+  <div class="sect-inner">
+    <div style="text-align:center;margin-bottom:56px" class="rw">
+      <div class="eyebrow center">Patient Reviews</div>
+      <h2 class="sh2">What Our <em>Patients</em> Say</h2>
+      <p class="slead" style="margin:14px auto 0">Real words from the families who trust us with their smiles.</p>
+    </div>
+    <div class="tg">
+      <div class="tc rw d1">
+        <div class="tstars">★★★★★</div>
+        <p class="tq">"Best dental experience I've ever had. The staff is warm and professional, and my kids actually look forward to their checkups now. Incredible!"</p>
+        <div class="tauth"><div class="tav"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format&fit=crop&facepad=3&face" alt="Sarah M."/></div><div><div class="tname">Sarah M.</div><div class="tsince">Patient since 2019</div></div></div>
+      </div>
+      <div class="tc rw d2">
+        <div class="tstars">★★★★★</div>
+        <p class="tq">"I was terrified of dentists for years. They were so patient and gentle — I finally got the work done I'd been avoiding. Can't recommend enough."</p>
+        <div class="tauth"><div class="tav"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop&facepad=3&face" alt="Robert K."/></div><div><div class="tname">Robert K.</div><div class="tsince">Patient since 2021</div></div></div>
+      </div>
+      <div class="tc rw d3">
+        <div class="tstars">★★★★★</div>
+        <p class="tq">"Called with an emergency and they fit me in the same morning. Fair price, zero judgment, excellent care. This is our family dentist for life."</p>
+        <div class="tauth"><div class="tav"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop&facepad=3&face" alt="Linda T."/></div><div><div class="tname">Linda T.</div><div class="tsince">Patient since 2020</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gal-inner">
+    <div style="text-align:center;margin-bottom:48px" class="rw">
+      <div class="eyebrow center">Our Office</div>
+      <h2 class="sh2">A Space Built for <em>Your Comfort</em></h2>
+    </div>
+    <div class="gal-grid rw">
+      <div class="gi tall"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format&fit=crop" alt="Dental reception" loading="lazy"/></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1588776814546-1ffbb21e2f50?w=600&q=80&auto=format&fit=crop" alt="Treatment room" loading="lazy"/></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80&auto=format&fit=crop" alt="Dental equipment" loading="lazy"/></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80&auto=format&fit=crop" alt="Pediatric area" loading="lazy"/></div>
+      <div class="gi"><img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=600&q=80&auto=format&fit=crop" alt="Modern dental chair" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-content rw">
+    <h2>Ready for a <em>Healthier Smile?</em></h2>
+    <p>New patients receive a free consultation. Call us today or book online — we'd love to meet you.</p>
+    <a href="tel:8634652037" class="cta-phone">(863) 465-2037</a>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-teal">📅 Book Online</a>
+      <a href="https://maps.google.com/?q=408+W+Interlake+Blvd+Lake+Placid+FL+33852" target="_blank" rel="noopener" class="btn-ghost">📍 Get Directions</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="rw">
+      <div class="eyebrow">Get In Touch</div>
+      <h2 class="sh2" style="margin-bottom:24px">Visit <em>Us</em> Today</h2>
+      <div class="ii"><div class="ii-ico">📍</div><div><div class="ii-label">Address</div><div class="ii-val">408 W Interlake Blvd<br>Lake Placid, FL 33852</div></div></div>
+      <div class="ii"><div class="ii-ico">📞</div><div><div class="ii-label">Phone</div><div class="ii-val"><a href="tel:8634652037" style="color:var(--ink)">(863) 465-2037</a></div></div></div>
+      <div class="ii"><div class="ii-ico">✉️</div><div><div class="ii-label">Email</div><div class="ii-val">info@sunshinefamilydentistry.com</div></div></div>
+      <div class="hbox">
+        <div class="hbox-t">Office Hours</div>
+        <div class="hr"><span class="hday">Monday – Thursday</span><span class="htime">8:00 AM – 5:00 PM</span></div>
+        <div class="hr"><span class="hday">Friday</span><span class="htime">8:00 AM – 2:00 PM</span></div>
+        <div class="hr"><span class="hday">Saturday</span><span class="htime">By Appointment</span></div>
+        <div class="hr"><span class="hday">Sunday</span><span class="htime">Closed</span></div>
+      </div>
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.64!2d-81.36624!3d27.29633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dc3ac!2s408+W+Interlake+Blvd%2C+Lake+Placid%2C+FL+33852!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy" title="Sunshine Family Dentistry"></iframe>
+      </div>
+    </div>
+    <div class="rw d2">
+      <div class="fh3">Book an Appointment</div>
+      <div class="fsub">Fill out the form and we'll confirm within 1 business day.</div>
+      <form class="form" onsubmit="submitForm(event)">
+        <div class="frow">
+          <div class="fg"><label>First Name *</label><input type="text" placeholder="Jane" required/></div>
+          <div class="fg"><label>Last Name *</label><input type="text" placeholder="Smith" required/></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Phone *</label><input type="tel" placeholder="(863) 000-0000" required/></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="jane@email.com"/></div>
+        </div>
+        <div class="fg">
+          <label>Service Needed</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>General Checkup & Cleaning</option>
+            <option>Cosmetic / Whitening</option>
+            <option>Restorative / Crowns</option>
+            <option>Pediatric / Children</option>
+            <option>Emergency Dental</option>
+            <option>Sedation Dentistry</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Preferred Date</label><input type="date"/></div>
+        <div class="fg"><label>Message / Notes</label><textarea placeholder="Insurance info, concerns, or anything we should know..."></textarea></div>
+        <button type="submit" class="fbtn" id="formBtn">Request Appointment →</button>
+        <p class="fnote">🔒 Your information is private and secure. We'll never share it.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftop">
+    <div class="fbrand">
+      <a href="#" class="logo"><div class="logo-circle">🦷</div><div><span class="logo-name">Sunshine Dentistry</span><span class="logo-sub">Lake Placid, FL</span></div></a>
+      <p>Gentle, expert dental care for the whole family. Serving Lake Placid and Highlands County, Florida with pride since 2009.</p>
+      <div class="fsocials">
+        <a href="#" class="fsoc">f</a>
+        <a href="#" class="fsoc">📷</a>
+        <a href="#" class="fsoc">G</a>
+        <a href="#" class="fsoc">★</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">General & Preventive</a></li>
+        <li><a href="#services">Cosmetic Dentistry</a></li>
+        <li><a href="#services">Restorative Care</a></li>
+        <li><a href="#services">Pediatric Dentistry</a></li>
+        <li><a href="#services">Emergency Dental</a></li>
+        <li><a href="#services">Sedation Dentistry</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#testi">Patient Reviews</a></li>
+        <li><a href="#gallery">Office Gallery</a></li>
+        <li><a href="#contact">Book Appointment</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:8634652037">(863) 465-2037</a></li>
+        <li><a href="mailto:info@sunshinefamilydentistry.com">Email Us</a></li>
+        <li><a href="https://maps.google.com/?q=408+W+Interlake+Blvd+Lake+Placid+FL" target="_blank">408 W Interlake Blvd<br>Lake Placid, FL 33852</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 Sunshine Family Dentistry. All Rights Reserved.</span>
+    <div style="display:flex;gap:20px"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Accessibility</a></div>
+  </div>
+</footer>
+
+<script>
+// Navbar
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>50),{passive:true});
+
+// Mobile menu
+const burger=document.getElementById('burger');
+const mob=document.getElementById('mobMenu');
+function toggleMenu(){burger.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':''}
+function closeMenu(){burger.classList.remove('open');mob.classList.remove('open');document.body.style.overflow=''}
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:0.08,rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.rw').forEach(el=>obs.observe(el));
+
+// Counter animation
+function animCount(el){
+  const target=parseFloat(el.dataset.target);
+  const suffix=el.dataset.suffix||'';
+  const isFloat=!Number.isInteger(target);
+  const dur=1800,step=16;
+  const inc=target/(dur/step);
+  let cur=0;
+  const t=setInterval(()=>{
+    cur=Math.min(cur+inc,target);
+    el.textContent=(isFloat?cur.toFixed(1):Math.round(cur))+suffix;
+    if(cur>=target)clearInterval(t);
+  },step);
+}
+const numObs=new IntersectionObserver(e=>{
+  if(e[0].isIntersecting){
+    document.querySelectorAll('[data-target]').forEach(animCount);
+    numObs.disconnect();
+  }
+},{threshold:.25});
+numObs.observe(document.getElementById('numbers'));
+
+// Also animate hero stats on load
+window.addEventListener('load',()=>{
+  setTimeout(()=>{document.querySelectorAll('.hero-stats [data-target]').forEach(animCount)},600);
+});
+
+// Form submit
+function submitForm(e){
+  e.preventDefault();
+  const btn=document.getElementById('formBtn');
+  btn.textContent='✓ Request Sent! We\'ll call you soon.';
+  btn.style.background='var(--teal)';
+  btn.disabled=true;
+  e.target.reset();
+}
+</script>
+</body>
+</html>
